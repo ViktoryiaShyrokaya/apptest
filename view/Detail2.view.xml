@@ -1,0 +1,48 @@
+<mvc:View controllerName="apptest.view.Detail2" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<Page title="{i18n>SUBDETAIL_TITLE}" navButtonPress="onNavBack"
+		  showNavButton="{device>/isPhone}" icon="sap-icon://home">
+		<content>
+		<ObjectHeader id="detailHeader"
+					  title="{OrderID}"
+					  number="{Freight}"
+					  numberUnit="EUR">
+			<attributes>
+				<ObjectAttribute text="{parts: [{path: 'i18n>ORDATE_LABEL'},{path: 'OrderDate'}], formatter: 'sap.apptest.util.formatters.concatenationDate'}"/>
+				<ObjectAttribute text="{parts: [{path: 'i18n>SHDATE_LABEL'},{path: 'ShippedDate'}], formatter: 'sap.apptest.util.formatters.concatenationDate'}"/>
+				<ObjectAttribute text="{parts: [{path: 'i18n>REQDATE_LABEL'},{path: 'RequiredDate'}], formatter: 'sap.apptest.util.formatters.concatenationDate'}"/>
+			</attributes>
+			<statuses>
+				<ObjectStatus text="{ShipCountry}"/>
+			</statuses>
+		</ObjectHeader>
+		<IconTabBar id="IconTabBar" select="fnOnSelectIconTabFilter" applyContentPadding="true">
+			<items>
+				<IconTabFilter id="iconTabCustom" key="Customer"
+							   text="{i18n>CUS_TITLE}">
+					<content>
+						<core:Fragment fragmentName="apptest.fragment.Customer" type="XML"/>
+					</content>
+				</IconTabFilter>
+				<IconTabFilter id="iconTabCustom2" key="Employee"
+							   text="{i18n>EMP_TITLE}">
+					<content>
+						<core:Fragment fragmentName="apptest.fragment.Employee" type="XML"/>
+					</content>
+				</IconTabFilter>
+				<IconTabFilter id="iconTabCustom3" key="Order"
+							   text="{i18n>ORD_TITLE}">
+					<content>
+						<core:Fragment fragmentName="apptest.fragment.Order" type="XML"/>
+					</content>
+				</IconTabFilter>
+				<IconTabFilter id="iconTabCustom4" key="Shipper"
+							   text="{i18n>SHIP_TITLE}">
+					<content>
+						<core:Fragment fragmentName="apptest.fragment.Shipper" type="XML"/>
+					</content>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

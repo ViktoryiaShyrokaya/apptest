@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+           xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+           xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+           xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="/MRSS/MRS_MY_ASSIGNMENTS_SRV" xml:lang="en" sap:schema-version="1 "
+                xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Project" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ProjectId"/>
+                </Key>
+                <Property Name="CustomerInfo" Type="Edm.String"/>
+                <Property Name="Timeframe" Type="Edm.Int16" sap:label=""/>
+                <Property Name="ProjectId" Type="Edm.String" Nullable="false"/>
+                <Property Name="ProjectName" Type="Edm.String"/>
+                <Property Name="Location" Type="Edm.String"/>
+                <Property Name="Duration" Type="Edm.String"/>
+                <Property Name="City" Type="Edm.String"/>
+                <Property Name="Description" Type="Edm.String"/>
+                <Property Name="Team" Type="Edm.Int16" sap:label=""/>
+                <NavigationProperty Name="TeamMemberSet" Relationship="/MRSS/MRS_MY_ASSIGNMENTS_SRV.ProjectTeamMember" FromRole="FromRole_ProjectTeamMember" ToRole="ToRole_ProjectTeamMember" />
+            </EntityType>
+            <EntityType Name="TeamMember" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TeamMemberID" />
+                    <PropertyRef Name="ProjectId" />
+                </Key>
+                <Property Name="TeamMemberID" Type="Edm.String" Nullable="false" />
+                <Property Name="ProjectId" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+                <Property Name="Role" Type="Edm.String" />
+                <Property Name="Address" Type="Edm.String" />
+                <Property Name="PhoneNumber" Type="Edm.String" />
+                <Property Name="EmailAddress" Type="Edm.String" />
+                <Property Name="MobileNumber" Type="Edm.String" />
+                <Property Name="CompanyName" Type="Edm.String" />
+                <NavigationProperty Name="Assignment" Relationship="/MRSS/MRS_MY_ASSIGNMENTS_SRV.ProjectTeamMember" FromRole="ToRole_ProjectTeamMember" ToRole="FromRole_ProjectTeamMember" />
+            </EntityType>
+            <Association Name="ProjectTeamMember" sap:content-version="1">
+                <End Type="/MRSS/MRS_MY_ASSIGNMENTS_SRV.Project" Multiplicity="1" Role="FromRole_ProjectTeamMember" />
+                <End Type="/MRSS/MRS_MY_ASSIGNMENTS_SRV.TeamMember" Multiplicity="*" Role="ToRole_ProjectTeamMember" />
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ProjectTeamMember">
+                        <PropertyRef Name="ProjectId" />
+                    </Principal>
+                    <Dependent Role="ToRole_ProjectTeamMember">
+                        <PropertyRef Name="ProjectId" />
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="/MRSS/MRS_MY_ASSIGNMENTS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="Projects" EntityType="/MRSS/MRS_MY_ASSIGNMENTS_SRV.Project" sap:content-version="1"/>
+                <EntitySet Name="TeamMembers" EntityType="/MRSS/MRS_MY_ASSIGNMENTS_SRV.TeamMember" sap:content-version="1" />
+                <AssociationSet Name="ProjectTeamMemberSet" Association="/MRSS/MRS_MY_ASSIGNMENTS_SRV.ProjectTeamMember" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Projects" Role="FromRole_ProjectTeamMember" />
+                    <End EntitySet="TeamMembers" Role="ToRole_ProjectTeamMember" />
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href=""
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href=""
+                       xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

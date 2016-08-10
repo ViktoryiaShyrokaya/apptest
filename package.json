@@ -1,0 +1,16 @@
+{
+  "name": "apptest",
+  "version": "1.0.0",
+  "description": "==== WELCOME ====",
+  "main": "Component.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Siarhei Valenda (siarhei.valenda@leverx.com)",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "express-http-proxy": "^0.9.0"
+  }
+}

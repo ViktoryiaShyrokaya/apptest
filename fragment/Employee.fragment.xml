@@ -1,0 +1,71 @@
+<VBox id="FormEmployee" xmlns="sap.m"
+      xmlns:l="sap.ui.layout"
+      xmlns:f="sap.ui.layout.form"
+      xmlns:core="sap.ui.core">
+    <f:Form
+            minWidth="1024"
+            maxContainerCols="2"
+            editable="false"
+            class="isReadonly">
+        <f:title>
+            <core:Title text="{i18n>EMPLOYEE_TITLE}" />
+        </f:title>
+        <f:layout>
+            <f:ResponsiveGridLayout
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    emptySpanL="4"
+                    emptySpanM="4"
+                    columnsL="1"
+                    columnsM="1" />
+        </f:layout>
+        <f:formContainers>
+            <f:FormContainer>
+                <f:formElements>
+                    <f:FormElement label="{i18n>FIRST_NAME_LABEL}">
+                        <f:fields>
+                            <Text text="{FirstName}"/>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement label="{i18n>LAST_NAME_LABEL}">
+                        <f:fields>
+                            <Text text="{LastName}" />
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement label="{i18n>BIRTH_LABEL}">
+                        <f:fields>
+                            <Text text="{path:'BirthDate',formatter:'sap.apptest.util.formatters.concatenationDateShort'}" />
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement label="{i18n>POSTCODE_LABEL}">
+                        <f:fields>
+                            <Text text="{PostalCode} {City}" />
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement label="{i18n>ADDRESS_LABEL}">
+                        <f:fields>
+                            <Text text="{Address}"/>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement label="{i18n>COUNTRY_LABEL}">
+                        <f:fields>
+                            <Text text="{Country}"/>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement label="{i18n>PHONEH_LABEL}">
+                        <f:fields>
+                            <Text text="{HomePhone}"/>
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+        </f:formContainers>
+    </f:Form>
+    <l:VerticalLayout
+            class="sapUiContentPadding"
+            width="100%">
+        <l:content>
+            <Text width="100%" text="{Notes}" />
+        </l:content>
+    </l:VerticalLayout>
+</VBox>

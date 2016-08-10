@@ -1,0 +1,26 @@
+{
+  "hcpdeploy": {
+    "name": "leverx.test"
+  },
+  "generation": [
+    {
+      "templateId": "sap.ui.ui5-template-plugin.1worklist",
+      "templateVersion": "1.0.9",
+      "dateTimeStamp": "Tue, 14 Jul 2015 11:07:59 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "PL",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/",
+    "metadataFilePath": "localService/metadata.xml",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  }
+}

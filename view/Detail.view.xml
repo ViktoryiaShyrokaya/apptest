@@ -1,0 +1,6 @@
+<mvc:View controllerName="apptest.view.Detail" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core">
+	<Page id="detailPage" title="{i18n>DETAIL_TITLE}" navButtonPress="onNavBack"
+		  showNavButton="{device>/isPhone}" icon="sap-icon://home">		
+	</Page>
+</mvc:View>

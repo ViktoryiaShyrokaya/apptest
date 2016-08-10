@@ -1,0 +1,39 @@
+<VBox xmlns="sap.m"
+      xmlns:l="sap.ui.layout"
+      xmlns:f="sap.ui.layout.form"
+      xmlns:core="sap.ui.core">
+    <f:Form id="FormShipper"
+            minWidth="1024"
+            maxContainerCols="2"
+            editable="false"
+            class="isReadonly">
+        <f:title>
+            <core:Title text="{i18n>CUSTOMER_TITLE}" />
+        </f:title>
+        <f:layout>
+            <f:ResponsiveGridLayout
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    emptySpanL="4"
+                    emptySpanM="4"
+                    columnsL="1"
+                    columnsM="1" />
+        </f:layout>
+        <f:formContainers>
+            <f:FormContainer>
+                <f:formElements>
+                    <f:FormElement label="{i18n>COMPANY_LABEL}">
+                        <f:fields>
+                            <Text text="{CompanyName}"/>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement label="{i18n>PHONE_LABEL}">
+                        <f:fields>
+                            <Text text="{Phone}"/>
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+        </f:formContainers>
+    </f:Form>
+</VBox>

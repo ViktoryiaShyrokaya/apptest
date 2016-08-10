@@ -1,0 +1,48 @@
+<mvc:View
+        xmlns:core="sap.ui.core"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc"
+        controllerName="apptest.view.Master">
+ <Page id="page" title="{i18n>MASTER_TITLE}" showNavButton="false"
+          icon="sap-icon://home">
+	 <subHeader>
+		 <Bar>
+			 <contentMiddle>
+				 <SearchField id="searchField"
+							  search="handleSearch"
+							  width="100%"></SearchField>
+			 </contentMiddle>
+		 </Bar>
+	 </subHeader>
+	 <content id="content">
+		 <List
+                            id="list"
+                            items="{path: '/Customers'}"
+                            noDataText="{masterView>/noDataText}"
+                            growing="true"
+                            growingScrollToLoad="true"
+                            growingThreshold="20">
+				<items>
+					<ObjectListItem
+							id="listItem"
+							type="Navigation"
+							press="onSelectionChange"
+							title="{ContactName}"
+							number="{PostalCode}">
+						<attributes>
+							<ObjectAttribute text="{parts: [{path: 'i18n>COMPANY_LABEL'}, {path: 'CompanyName'}], formatter: 'sap.apptest.util.formatters.concatenation'}"/>
+							<ObjectAttribute text="{parts: [{path: 'i18n>COUNTRY_LABEL'}, {path: 'Country'}], formatter: 'sap.apptest.util.formatters.concatenation'}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+        </content>
+	 <!--<footer>-->
+		 <!--<Bar>-->
+			 <!--<contentRight>-->
+				 <!--<Button icon="sap-icon://filter" press="onFilterDialogOpen"/>-->
+			 <!--</contentRight>-->
+		 <!--</Bar>-->
+	 <!--</footer>-->
+    </Page>
+    </mvc:View>

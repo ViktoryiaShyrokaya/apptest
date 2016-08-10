@@ -1,0 +1,62 @@
+<VBox xmlns="sap.m"
+      xmlns:l="sap.ui.layout"
+      xmlns:f="sap.ui.layout.form"
+      xmlns:core="sap.ui.core">
+
+    <Table id="idTable" class="sapUiSizeCompact" items="{model>/}">
+        <columns>
+            <Column>
+                <Text text="{i18n>COL_NAME_PRODUCT}"/>
+            </Column>
+            <Column minScreenWidth="Small" demandPopin="true">
+                <Text text="{i18n>COL_NAME_SUPPLIER}" />
+            </Column>
+            <Column minScreenWidth="Small" demandPopin="true">
+                <Text text="{i18n>COL_NAME_CATEGORY}"/>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{model>ProductName}" />
+                    <VBox>
+                        <HBox>
+                            <Label design="Bold" class="labelCust" text="{i18n>COL_LABEL_CONT} { }"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{model>ContactName}"></Text>
+                        </HBox>
+                        <HBox>
+                            <Label design="Bold" class="labelCust" text="{i18n>COL_LABEL_CON_TITLE}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{model>ContactTitle}"></Text>
+                        </HBox>
+                        <HBox>
+                            <Label design="Bold" class="labelCust" text="{i18n>COMPANY_LABEL} "></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{model>CompanyName}"></Text>
+                        </HBox>
+                        <HBox>
+                            <Label design="Bold" esign="Bold" class="labelCust" text="{i18n>ADDRESS_LABEL}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{model>Address}"></Text>
+                        </HBox>
+                        <HBox>
+                            <Label design="Bold" esign="Bold" class="labelCust" text="{i18n>COL_LABEL_CITY}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{model>City}"></Text>
+                        </HBox>
+                        <HBox>
+                            <Label design="Bold" class="labelCust" text="{i18n>COL_LABEL_REG}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{model>Region}"></Text>
+                        </HBox>
+                    </VBox>
+                    <VBox>
+                        <HBox>
+                            <Label design="Bold" class="labelCust" text="{i18n>COL_LABEL_CATEGORY}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{model>CategoryName}"></Text>
+                        </HBox>
+                        <HBox>
+                            <Label design="Bold" class="labelCust" text="{i18n>COL_LABEL_DESC}"></Label>
+                            <Text class="sapUiSmallMarginBegin" text="{model>Description}"></Text>
+                        </HBox>
+                    </VBox>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</VBox>

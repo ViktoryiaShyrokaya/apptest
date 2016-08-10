@@ -1,0 +1,12 @@
+<ObjectListItem
+		type="{device>/listItemType}"
+		xmlns="sap.m"
+		title="{OrderID}"
+		number="{Freight}"
+		numberUnit="EUR"
+		press="handleSelect">
+	<attributes>
+		<ObjectAttribute text="{parts: [{path: 'i18n>VIA_LABEL'},{path: 'ShipVia'}], formatter: 'sap.apptest.util.formatters.concatenation'}"/>
+		<ObjectAttribute text="{parts: [{path: 'i18n>SHDATE_LABEL'},{path: 'ShippedDate'}], formatter: 'sap.apptest.util.formatters.concatenationDate'}"/>
+	</attributes>
+</ObjectListItem>
